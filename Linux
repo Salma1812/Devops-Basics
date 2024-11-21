@@ -30,8 +30,8 @@
 
 /opt(Optional Applications): This directory is used for installing the application software from third party vendors
                              that are not available in the linux distribution.  
-     Usually, the software code is stored in the opt directory and the binary code is linked to the bin directory
-so that all users can run that software.
+           Usually, the software code is stored in the opt directory and the binary code is linked to the bin directory
+           so that all users can run that software.
 
 /home: Contains secondary users home directory.
 
