@@ -1,0 +1,73 @@
+1)Create file or Directory:             2) Touch : Used to create empty file.
+
+  1) Create single directory                 1) Create Single empty file
+  </> mkdir salma                            </> touch test
+
+  2) Create multiple directory               2) Create multiple files
+  </> mkdir salma asma amra                  </> touch Devops linux python
+
+  3) Create Nested directory                 3) Create number of files
+  </> mkdir -p salma/asma/amra               </> touch student{1..5}
+
+  4) Create Number of directory
+  </> mkdir student{1..10}
+
+3) Copy and Paste : cp <option> <Source> <Destination>       1) Copy file:
+              option :>  -r : Recursive                        </> cp -rvf /salma/devops.txt /asma/
+                         -v : verbose
+                         -f : forcefully                    2) Copy all data starts from W alphabet
+                                                              </>  cp -rvf /salma/W* /amra/
+
+
+4) Remove file and directory : rm -rvf /salma/asma
+
+5) Move file or directory : mv /home/salma/file1.txt asma/
+
+6) Rename file or directory : mv dev devops
+
+7) USER MANAGEMENT : 1) Create user account(Creates user) : sudo useradd -m asma
+
+                     2) Create user Password : sudo passwd asma
+
+                     3) To switch user : su salma
+
+                     4) whoami : To ensure user login after su.
+
+                     5) Logout from user account : exit  or "ctrl+d"
+
+                     6) Delete user account : sudo userdel asma
+
+                     7) Change user login name salma to devops : sudo usermod -l devops salma
+
+                     8) To find the users : sudo cat /etc/passwd (or) cd /home -> ls
+
+8)GROUP MANAGEMENT : A group is a collection of user accounts , useful for administrators to manage and apply
+                     permissions for a different number of users.
+
+           1) Create Group : sudo groupadd Devopsgrp
+
+           2) Check groups :  sudo cat/etc/group
+
+           3) Delete group : sudo groupdel Devopsgrp 
+
+           4) Add single user in group : sudo gpasswd -a amra Devopsgrp
+
+           5) Add multiple users in group : sudo gpasswd -M amra,azzu,arfu Devopsgrp
+
+           6) Remove group member : sudo gpasswd -d arfu Devopsgrp
+
+           7) Make group admin : sudo gpasswd -A amra Devopsgrp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
