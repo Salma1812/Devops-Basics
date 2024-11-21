@@ -1,0 +1,26 @@
+pwd -> Shows present working directory.
+ls -> Lists files and directories in the pwd.
+ls -l -> Long listing (shows Permissions, Ownership, Size, Modification date of files and directories).
+ls -a -> Lists all the files in the pwd including hidden files.
+ls -ltr -> Lists the files based on modification time, shows the recently modified files first.
+uname -> Shows name of the kernel(OS).
+uname -r -> Shows version of the kernel.
+cd -> Used for change directory.
+clear -> Clears the screen.
+whoami -> Shows currently login user name.
+history -> Shows list of previous used commands.
+date -> Shows time and date.
+cd .. -> Moves from current directory to the parent directory.
+cd / -> Navigate to root directory.
+cd ~ -> Navigate to the home directory of the current user.
+cd - -> To switch between two directories.(Directory i navigated from and switches back to it)
+lsb_release -> Shows exact version of our Linux Distribution.
+man -> Reference to learn about commands and their options.
+echo -> Displays a line of text or output to the terminal.(Used in scripts to debug variables/ format messages)
+df -h -> Display disk space usage for file systems in human readable format.(total space, used space, available space)
+free -g -> Displays information about memory usage in Gigabytes.
+nproc -> Displays the number of processing units(CPU cores) availble for the current user.
+top -> Shows CPU usage,memory usage, running processes,useful for monitoringsystem performance and resource utilization.
+tee -> Reads from the standard input and writes to standard output.(echo "Hi" | tee -a file.txt)
+vim -> Text editor for editing text files, scripts and code.
+
