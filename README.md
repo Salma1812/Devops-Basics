@@ -1,2 +1,2 @@
 # Devops-Basics
-Making notes in this repository related to Linux for Devops.
+Making notes in this repository related to Devops.
