@@ -1,0 +1,4 @@
+1) Linux File Permissions : Basic Permission , Special Permission , ACL (Access Control List) Pernission.
+
+
+                            
