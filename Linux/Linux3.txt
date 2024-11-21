@@ -58,6 +58,9 @@
 
            7) Make group admin : sudo gpasswd -A amra Devopsgrp
 
+           8) Change group : sudo chgrp DevopsEnginers file1.txt
+
+              ( Other users in DevopsEnginers group can access the file1.txt(ex,day to day tasks))
 
 
 
