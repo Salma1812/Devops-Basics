@@ -1,4 +1,19 @@
 1) Linux File Permissions : Basic Permission , Special Permission , ACL (Access Control List) Pernission.
 
+              1) Check File Permission : ls -l file1.txt
+
+              2) Check Directory Permission : ls -ld file2/
+
+              3) To change permission : a) Add read permission to the owner : chmod u+r file1.txt
+                                                                              chmod 400 file.txt
+                                        b) Add read+write permission to the group : chmod g+rw  file1.txt
+                                                                                    chmod 060 file1.txt
+                                        c) Remove read permission to the others : chmod o-r file.txt
+                                                                                  chmod 003 file1.txt
+              4) To change Ownership : chown salma file1.txt    ,  chown -R newowner dirname
+              5) To change Group Ownership : chgrp devopsgrp file1.txt
+
+
+
 
                             
