@@ -11,7 +11,41 @@
                                         c) Remove read permission to the others : chmod o-r file.txt
                                                                                   chmod 003 file1.txt
               4) To change Ownership : chown salma file1.txt    ,  chown -R newowner dirname
-              5) To change Group Ownership : chgrp devopsgrp file1.txt
+              5) To change Group Ownership : chgrp devopsgrp file1.txt 
+
+3) ACL : It is a service, provides an additional , more flexible permissions  to specific users and group to particular
+      directories  and file.
+
+  When a user not a member of the group but we want to give some read and write access without making user a member of 
+  the group , ACL do this.
+
+       1) Check ACL Permission  : getfacl file1.txt
+       2) Set ACL Permission to user : setfacl -m u:salma:rwx /devops
+       3) Remove ACL Permission of user : setfacl -x u:salma: /devops
+       4) Set ACL Permission to Group : setfacl -m g:devopsgrp:rwx /devops
+       5) Remove ACL Permission of Group : setfacl -x g:devopsgrp: /devops
+       6) Remove all ACL permissions : setfacl -b /devops
+
+2) Regular Expressions : Special characters which help in search data , matching complex patterns.
+
+   GREP:(Global Regular Expression Print)-Searches a file for a particular pattern of characters and displays all 
+                                          lines which contain that pattern.
+
+        1) Search a word in the file : grep root /etc/passwd  (or) grep TRACE application.log
+                                       Includes only lines with root.
+        2) Search a string in multiple files : grep root /etc/passwd /etc/group
+        3) Search a string case insensitive : grep -i Root /etc/passwd
+        4) Search a string in all files recursively : grep -r root /
+        5) Inverting the string match : grep -v root /etc/passwd (Excludes lines with root)
+        6) Total number of lines string match : grep -c root /etc/passwd
+        7) Display the file names that match the string : grep -l root /etc/passwd
+        8) Display the file names that do not contain the string : grep -L root /etc/passwd
+        9) Display the string match line with number : grep -n root /etc/passwd
+       10) Display the lines that start with a string : grep ^root /etc/passwd
+       11) Display the lines that end with a string : grep root$ /etc/passwd
+       12) Search and redirect output in a new file : grep root /etc/passwd > file1.txt
+
+
 
 
 
