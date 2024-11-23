@@ -1,0 +1,64 @@
+                                  1)   Archive Files in Linux : 
+
+Archiving is the process of combining multiple files and directories (same or different size) into one file.
+-> Archive process is very useful in backup and compression size of data in linux.
+
+Tar : Tape Archive , Used to compress size or drives backup .[tar <options><files>
+
+Options : c-create, x-extract, v-verbose, f-forcefully, t-test, z-gzip, j-bz2, J-xz, C-Specific Destination.
+
+1) Create tar archive file : tar -cvf /mnt/backup.tar /var
+2) Show file size in human readable format : sudo du -sh /var
+3) Extract a tar archive file on the default location : tar -xvf /mnt/backup.tar
+4) Extract a tar archive file on the specific location : tar -xvf /mnt/backup.tar -C /root/Desktop/
+5) Create tar archive file with compress in size (gzip) : tar -cvzf /mnt/backup.tar.gz /var
+6) Extract a tar archive file with compress in size (gzip) : tar -xvzf /mnt/backup.tar.gz
+7) Create a tar archive file with compress in size (xz) : tar -cvjf /mnt/backup.tar.xz /var
+8) Extract a tar archive file with compress in size : tar -xvjf /mnt/backup.tar.xz
+
+               2) Job Automation : Allows us to perform tasks automatically in OS by using tools.
+                   -> Useful for the administrator to assign tasks to OS or performing daily basis work.
+Two types of Automation : 
+
+1) at - Executes a job only one time.
+2) crontab - Executes a job multiple times.
+
+1) Set job with at command :[ date
+                             at 8:10 AM  : At 8:10 am
+                             at> useradd salma :  New user salma is added to the system executes at the time specified.
+                             at> : System is ready to accept commands.
+                            ctrl+d ] : Tells at command to exit and schedule the job.
+2) Check the list of schedule jobs : atq
+3) Remove a job : atrm <job number> -----atrm 2
+4) Restrict user from accessing at : vim /etc/at.deny
+                                     salma
+                                     :wq
+                           User salma is not able to schedule the jobs using "at"
+5) Start crond service : systemctl start crond
+6) Enable crond service : systemctl enable crond : Automatically crond service starts when the system boots
+7) Set Cron jobs : crontab -e : Opens the users personal crontab file to add,edit and to save the changes.
+                              Each * represents ;
+-----> * * * * * command_to_run : * Minute (0-59)
+                               * Hour (0-23)
+                               * Day of the month (1-31)
+                               * Month (1-12)
+                               *  Day of the week (0-7, where both 0 and 7 represent Sunday
+8) Shows cron job of the current users : crontab -l
+9) Remove cronjobs : crontab -r (or) Go to the crontab file (crontab -e) and remove the job line.
+10) Set cronjob to specific user : crontab -u salma -e
+11) Shows cronjob of other user : crontab -u salma -l
+12) Restricts users from crond service : vim /etc/cron.deny
+
+
+
+
+
+
+
+
+
+
+
+
+
+
