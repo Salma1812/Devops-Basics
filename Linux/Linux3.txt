@@ -15,7 +15,7 @@
 3) Copy and Paste : cp <option> <Source> <Destination>       1) Copy file:
               option :>  -r : Recursive                        </> cp -rvf /salma/devops.txt /asma/
                          -v : verbose
-                         -f : forcefully                    2) Copy all data starts from W alphabet
+                         -f : forcefully                     2) Copy all data starts from W alphabet
                                                               </>  cp -rvf /salma/W* /amra/
 
 
