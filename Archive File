@@ -1,0 +1,22 @@
+                                     Archive Files in Linux : 
+
+Archiving is the process of combining multiple files and directories (same or different size) into one file.
+-> Archive process is very useful in backup and compression size of data in linux.
+
+Tar : Tape Archive , Used to compress size or drives backup .[tar <options><files>
+
+Options : c-create, x-extract, v-verbose, f-forcefully, t-test, z-gzip, j-bz2, J-xz, C-Specific Destination.
+
+1) Create tar archive file : tar -cvf /mnt/backup.tar /var
+2) Show file size in human readable format : sudo du -sh /var
+3) Extract a tar archive file on the default location : tar -xvf /mnt/backup.tar
+4) Extract a tar archive file on the specific location : tar -xvf /mnt/backup.tar -C /root/Desktop/
+5) Create tar archive file with compress in size (gzip) : tar -cvzf /mnt/backup.tar.gz /var
+6) Extract a tar archive file with compress in size (gzip) : tar -xvzf /mnt/backup.tar.gz
+7) Create a tar archive file with compress in size (xz) : tar -cvjf /mnt/backup.tar.xz /var
+8) Extract a tar archive file with compress in size : tar -xvjf /mnt/backup.tar.xz
+
+
+
+
+
