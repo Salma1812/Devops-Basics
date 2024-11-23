@@ -51,7 +51,7 @@
 1) Find files under home directory : find /home -name file1.txt (or) find ~ -name "file1.txt"
 2) Find files with suid  permission : find / -perm 4755
 3) Find files with suid  permission : find / -perm 2546
-4) Find files with sticky bit permission : find / -perm 1722
+4) Find files with sticky bit permission : find / -perm 1755
 5) Find files based on users : find / -user root
 6) Find files based on groups : find / -group devopsgrp
 7) Find files based on size : find /tmp -size -10M
