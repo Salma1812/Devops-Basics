@@ -23,4 +23,7 @@ nproc -> Displays the number of processing units(CPU cores) availble for the cur
 top -> Shows CPU usage,memory usage, running processes,useful for monitoringsystem performance and resource utilization.
 tee -> Reads from the standard input and writes to standard output.(echo "Hi" | tee -a file.txt)
 vim -> Text editor for editing text files, scripts and code.
+WC(Word Count)-> Used to count line and word numbers.[wc -l /etc/passwd (Count lines)] [wc -w /etc/passwd(count words)]
+Head -> Display top lines of the file. [head /etc/passwd (default top 10 lines) [head -n 15 /etc/passwd]
+Tail -> Display bottom lines of the file. [tail -n 5 /etc/passwd]
 
