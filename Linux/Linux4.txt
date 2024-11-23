@@ -45,6 +45,67 @@
        11) Display the lines that end with a string : grep root$ /etc/passwd
        12) Search and redirect output in a new file : grep root /etc/passwd > file1.txt
 
+3) Find : It is used to search and locate list of files and directories basedd on conditions like permissions, users, 
+          groups, file type, date, size, etc we specify for files that match the arguments.
+
+1) Find files under home directory : find /home -name file1.txt (or) find ~ -name "file1.txt"
+2) Find files with suid  permission : find / -perm 4755
+3) Find files with suid  permission : find / -perm 2546
+4) Find files with sticky bit permission : find / -perm 1722
+5) Find files based on users : find / -user root
+6) Find files based on groups : find / -group devopsgrp
+7) Find files based on size : find /tmp -size -10M
+8) Find files with more than 10MB : find /tmp -size +10M
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
