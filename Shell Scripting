@@ -1,0 +1,158 @@
+SHELL SCRIPTING :
+
+What is Shell Script? 
+In the simplest terms, a shell script is a file containing a series of commands. The shell reads this file and carries 
+out the commands as though they have been entered directly on the command line. 
+
+Normally the shell scripts has the file extension .sh 
+
+To create a shell script, you use a text editor. There are many, many text editors available for your Linux system,
+both for the command line environment and the GUI environment. Here is a list of some common ones: 
+
+1) vi or vim is the command line interface text editor. 
+2) gedit is the GUI text editor. 
+
+Following steps are required to write shell script: 
+
+Step 1) Use any editor like vi or gedit to write shell script. 
+        Syntax: vi << Script file name >> 
+                Example: vi hello.sh //Start vi editor
+
+Step 2) After writing shell script set execute permission for your script as follows ;
+       Syntax: chmod<<permission>><<script filename>>
+Examples: # chmod +x <<script filename>>
+          # chmod 755 <<script filename>>
+Note:
+This will set read,write and execute(7)permission for owner,for group and other permissions are read and execute only(5).
+ 
+Step 3) Execute your script as ;
+        Syntax: bash script file name 
+        sh <script_filename>
+        ./<script_filename> 
+
+Example for writing script: 
+
+vi shub.sh // Start vi editor 
+#!/bin/sh 
+echo "Hello welcome to The DevOps Learning!"
+
+Give the permissions as follows 
+chmod +x shub.sh 
+
+Run the hello.sh script file as follows. 
+./shub.sh 
+
+Output :
+Hello welcome to The Devops Learning!
+
+        First Shell Script :
+                            Filename : salma.sh
+
+#!/bin/bash 
+#Purpose : To display the message. 
+#Author: Salma . 
+#Date: 1st December 2024. 
+echo "Hello Welcome to the DevOps Learning" 
+
+- The first line is called a shebang or a 'bang" line. It is nothing but the absolute path to the Bash interpreter. 
+It consists of a number sign and an exclamation point character (#!), followed by the full path to the interpreter
+such as /bin/bash/. If you do not specify an interpreter line, the default is usually the /bin/sh.
+
+- In order to execute the shell script make sure that you have execute permission. Give execute permissions as follows. 
+         #chmod +x shub.sh (OR) chmod 111 shub.sh 
+There are different ways to run a shell script: 
+1) bash shub.sh 
+2) sh shub.sh 
+3) ./shub.sh 
+4) . shub.sh
+
+Case Sensitivity :
+As you know Linux is case sensitive, file names, variables, and arrays used in shell scripts are also case sensitive. 
+
+Check out this Example: 
+#!/bin/bash Page 
+string1=10 
+String1=20
+echo "The value ue of string1 is $string1 "
+echo "The value of String1 is $String1 "
+
+File Naming conventions: 
+
+1)A file name can be a maximum of 255 characters 
+2)The name may contain alphabets, digits, dots and underscores 
+3)System commands or Linux reserve words can not be used for file names. 
+4)File system is case sensitive. 
+5)Some of valid filenames in Linux are :
+shubham.txt 
+Shubham.sh 
+Shubham_08112013.sh 
+Shubham05.sh 
+
+COMMENTS :
+* Comments are used to escape from the code. 
+* This part of the code will be ignored by the program interpreter. 
+* Adding comments make things easy for the programmer, while editing the code in future. 
+* Single line comments can be do using # 
+* Multilane comments can be using HERE DOCUMENT feature as follows ;
+<<COMMENT1
+your comment 1 
+comment 2 
+blah 
+COMMENT1
+File name: comments.sh 
+#!/bin/bash 
+# This is a basic shell script by Salma.
+echo "Hello, Welcome to the Devops Learning!"  #It will display the message
+
+File name: multiline_comments.sh 
+# ! /bin/bash :wq 
+echo "We are commenting multiple tine" 
+<<COMMENT1
+I am commenting here multiple lines using HERE DOCUMENT feature 
+COMMENTI 
+echo "Multi line comment done" 
+
+Variables 
+There are two types of variables in Linux shell script. 
+Those are ;
+1.System variables 
+2.User defined variables (UDV). 
+
+Naming conventions for variables:  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
