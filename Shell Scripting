@@ -1,7 +1,7 @@
 SHELL SCRIPTING :
 
 What is Shell Script? 
-In the simplest terms, a shell script is a file containing a series of commands. The shell reads this file and carries 
+A shell script is a file containing a series of commands. The shell reads this file and carries 
 out the commands as though they have been entered directly on the command line. 
 
 Normally the shell scripts has the file extension .sh 
@@ -119,6 +119,247 @@ Those are ;
 2.User defined variables (UDV). 
 
 Naming conventions for variables:  
+
+Variable name must begin with alphanumeric character or underscore character (_).
+
+By convention, environment variables (PAGER, EDITOR, ..) and internal shell variables (SHELL, BASH_VERSION, ..) 
+are capitalized. All other variable names should be lower case. 
+* Variable names are case-sensitive;this convention avoids accidentally overriding environmental & internal variables.
+
+System defined Variables:
+
+Created and maintained by Linux bash shell itself. This type of variable is defined in CAPITAL LETTERS: 
+There are many shell inbuilt variables which are used for administration and writing shell scripts. 
+To see all system variables, type the following command at a console / terminal: 
+:-env or printenv 
+Use echo command to display varaible values as follows;
+
+Filename : System_varaible.sh
+#!/bin/bash
+echo 'BASH='$BASH
+echo 
+echo 
+echo 
+echo 
+echo 
+echo 
+echo 
+echo 
+echo 
+echo 
+echo 
+echo 
+echo 
+echo 
+echo 
+echo '$BASH_VERSION =' $BASH_VERSION 
+echo 'HOSTNAME=' $HOSTNAME
+echo 'TERM=' $TERM 
+echo 'SHELL=' $SHELL
+echo 'HISTSIZE=' $HISTSIZE 
+echo 'SSH_CLIENT=' $SSH_CLIENT 
+echo ' QTDIR= ' $QTDIR 
+echo ' QTINC= ' $QTINC 
+echo ' SSH_TTY=' $SSH_TTY 
+echo ' JRE_HOME=' $JRE_HOME 
+echo ' USER=' $USER 
+echo ' LS_COLORS=' $LS_COLORS 
+echo ' TMOUT= ' $TMOUT 
+echo '$MAIL=' $MAIL 
+echo 'PATH=' $PATH 
+echo 'PWD=' $PWD
+echo 'JAVA_HOME=' $JAVA_HOME 
+echo 'LANG=' $LANG 
+echo 'ASKPASS=' $ASKPASS
+echo 'HISTCONTROL=' $HISTCONTROL 
+echo 'SHLVL=' $SHLVL 
+echo 'HOME=' $HOME 
+echo 'LOGNAME=' $LOGNAME 
+echo 'TLIB=' $QTLIB  
+echo 'CVS_RSH=' $CVS_RSH 
+echo 'SSH_CONNECTION=' $SSH_CONNECTION 
+echo 'LESSOPEN=' $LESSOPEN 
+echo 'G_BROKEN_FILENAMES=' $G_BROKEN_FILENAMES
+echo 'OLDPWD= ' $OLDPWD 
+
+User defined Variables :
+Created and maintained by user. This type of variable defined may use any valid variable name but it is good
+practice to avoid all uppercase names as many are used by the shell. 
+File : user_defined_variables .sh 
+
+#! /bin/bash 
+trainingCourse=DevOps 
+echo 'Displaying the user defined the varibale (trainingCourse) value is :' $trainingCourse
+
+COMMANDLINE ARGUMENTS :
+During shell script execution, values passing through command prompt is called as command line arguments. 
+
+#Example, while running a shell script, we can specify the command line arguments as "sh scriptfile.sh argl arg2 arg3"
+
+While using command line arguments follow the below important points. 
+
+* We can specify n number of arguments, there is no limitation. 
+* Each argument is separated by space. 
+
+Following example describes the command line arguments. 
+File name: commandlineargs.sh 
+#!/bin/bash 
+#Number of arguments on the command line. 
+echo '$#:' $#
+#Process number Of the current process . 
+echo ' $$:' $$
+#Display the third argument on the command line, from left to right.
+echo '$3:' $3
+
+#Display the name of the current shell or program. 
+echo ' $0:' $0 
+#Display all the arguments on the command line using * symbol. 
+echo ' $*:' $@
+Display all She arguments on the command tine using @ symbol. 
+ 
+Run : sh commandlineargs.sh Github Bluemix UCD Jenkins Java Linux WebSphereApplicationServer 
+Output: 
+$# 4
+$$ 16955 
+$3: WebSphereApplicationServer 
+$0: commandlineargs. sh 
+$*:Java Linux WebSphereApplicationServer Android 
+$@: Java Linux WebSphereApplicationServer Android 
+
+Difference between and $@ : The collection of arguments in $* is treated as one text string, whereas the collection of
+arguments in $@ is treated as seperate strings.
+
+STRINGS :
+Strings are scalar ana there is no limit to the size of a string. 
+Any characters, symbols, or words can be used to make up your String. 
+
+How to define a string? 
+We use single or double quotations to define a string. 
+"Double Quotes"—Anything enclose in double quotes removed meaning of that characters (except \ and $). 
+'Single quotes'—Enclosed in single quotes remains unchanged. 
+`Back quote`—To execute command 
+Example: 
+FileName: quotes.sh 
+#! /bin/bash 
+single= 'Single quoted' 
+double= "Double quoted"
+echo $single
+echo $double
+     #save this script as quotes.sh,  chmod 755 quotes.sh, ./quotes.sh
+
+STRING FORMATTING :- 
+             Character Description ;
+                        -n Do not output the trailing new line. 
+                        -e Enable interpretation of the following backslash escaped 
+            Characters in the stringS: 
+                \a alert (bell) 
+                \b backspace 
+                \c suppress trailing new line 
+                \n new line 
+                \r carriage return 
+                \t horizontal tab 
+                \\ backslash 
+User Interaction using read command :
+
+In some cases the script needs to interact with the user and accept inputs. 
+In shell scripts we use the read statement to take input from the user. 
+ 
+read : read command is used to get the input from the user (Making scripts interactive). 
+Example: File Name: readName. sh 
+                #! /bin/bash 
+                #Author: Shubham Londhe . 
+                #Date: 31st December 2@24. 
+                echo "Please enter your name:" 
+                read userName 
+                echo "The name you entered is $userName" 
+Run the above script as follows: 
+# ./readName.sh 
+ OUTPUT:
+          Please enter your name:  Salma  
+          The name you entered is Salma   
+
+CONTROL COMMANDs:
+        a) if control statement:
+                                Syntax: 
+                                        if condition 
+                                        then 
+                                        Display commands list if condition is true. 
+                                        else
+                                        Display commands list if condition is false. 
+                                        fi
+ 
+Note: if & then must be separated, either with a <<new line>> or a semicolon(;), termination of the if statement is fi. 
+Example. 
+Following example demonstrates the find biggest number. 
+File Name: FindBiggestNumber.sh 
+                if[$# -ne 3 ]
+                then 
+                echo "$0: numberl number2 number3 are not given" >&2  
+                exit 1
+                fi
+
+if [ $n1 —gt $n2] && [$n1 —gt $n3] 
+then 
+echo "$nl is the biggest t number" 
+el-if [$n2 -gt $nl ] &&[ $n2 -gt $n3 ]
+then 
+echo "$n2 is the biggest t number" 
+el-if [ $n3 —gt $n1 ] && [ $n3 —gt $n2 ]
+then 
+echo "$n3 is the biggest number" 
+el-if [$1 -eq $2 ] && [ $1 -eq $3] && [ $2 -eq $3]
+then
+echo "All the three numbers are equal"
+else
+echo " I can not figure out which number is bigger"
+fi
+        Run : sh findbiggerNumber.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
