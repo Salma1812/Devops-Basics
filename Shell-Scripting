@@ -136,22 +136,7 @@ Use echo command to display varaible values as follows;
 
 Filename : System_varaible.sh
 #!/bin/bash
-echo 'BASH='$BASH
-echo 
-echo 
-echo 
-echo 
-echo 
-echo 
-echo 
-echo 
-echo 
-echo 
-echo 
-echo 
-echo 
-echo 
-echo 
+echo 'BASH='$BASH 
 echo '$BASH_VERSION =' $BASH_VERSION 
 echo 'HOSTNAME=' $HOSTNAME
 echo 'TERM=' $TERM 
@@ -203,19 +188,18 @@ While using command line arguments follow the below important points.
 
 Following example describes the command line arguments. 
 File name: commandlineargs.sh 
-#!/bin/bash 
-#Number of arguments on the command line. 
-echo '$#:' $#
-#Process number Of the current process . 
-echo ' $$:' $$
-#Display the third argument on the command line, from left to right.
-echo '$3:' $3
-
-#Display the name of the current shell or program. 
-echo ' $0:' $0 
-#Display all the arguments on the command line using * symbol. 
-echo ' $*:' $@
-Display all She arguments on the command tine using @ symbol. 
+                #!/bin/bash 
+                #Number of arguments on the command line. 
+                echo '$#:' $#
+                #Process number Of the current process . 
+                echo ' $$:' $$
+                #Display the third argument on the command line, from left to right.
+                echo '$3:' $3
+                #Display the name of the current shell or program. 
+                echo ' $0:' $0 
+                #Display all the arguments on the command line using * symbol. 
+                echo ' $*:' $@
+                Display all She arguments on the command tine using @ symbol. 
  
 Run : sh commandlineargs.sh Github Bluemix UCD Jenkins Java Linux WebSphereApplicationServer 
 Output: 
@@ -313,11 +297,87 @@ echo "All the three numbers are equal"
 else
 echo " I can not figure out which number is bigger"
 fi
-        Run : sh findbiggerNumber.sh
+        Run : sh findbiggerNumber.sh 1 2 3
+        OUTPUT : 3 is the biggest number
 
+EXAMPLE-2 :   FileExists.shPage 
 
+                #!/bin/bash 
+                echo —e "Enter the name of the file : \c"
+                read file_name 
+                if [ —f $file_name ]
+                then 
+                if [ -w $file_name ]
+                then 
+                echo "Type something, To Quit type Ctrl +d" 
+                cat >> $file_name 
+                else
+                echo "The file do not have write permissions" 
+                fi
+                echo "$file_name not exists" 
+                fi
 
+FOR LOOP : Syntax :
+                        for (condition)
+                        do
+                        execute here all commands or script until the condition is not satisfied( and repeat all 
+                        statements between do and done).
+                        done
 
+FileName : for_loop.sh
+                echo " can you see the following:"
+                for((i=1; i<=5;i++)
+                do
+                echo $i
+                echo ""
+                done
+OUTPUT : can you see the folowing:
+                1
+                2
+                3
+                4
+                5                                                       i=5
+WHILE LOOP:        Syntax : while [condition]                EXAMPLE :  while test $i !=0
+                            do                                          do                        OUTPUT :  5
+                            command1                                    echo "$i"                           4
+                            command2                                    echo " "                            3
+                            command3                                    i=`expr $i-1`                       2
+                            ---------------   ---------                                                     1
+                            done                                                                                
+SWITCH CASE : 
+The case statement is good alte to multilevel if-then-else- fi statement. It enables you to match several
+values against one variable. It's easier to read and write. 
+                Syntax: 
+                        case $variable—name in 
+                        pattern1) command
+                        ...........           
+                        command ;; 
+                        pattern2) command 
+                        ..........
+                        Command ; ; 
+                        patternN) command 
+                        ..........
+                        *) command
+                        ..........
+                         command ;;
+                        esac
+EXAMPLE : Filename: switch_case. sh 
+                #!/bin/sh 
+                echo "Enter a number between 1 and 10. "
+                read NUM 
+                case $NUM in 
+                1) echo "You entered is one" ;;
+                2) echo "You entered is two" ;;
+                3) echo "You entered is three" ;;
+                4) echo "You entered is four" ;;
+                5) echo "You entered is five" ;;
+                6) echo "You entered is six" ;;
+                7) echo "You entered is seven" ;; 
+                8) echo "You entered is eight" ;;
+                9) echo "You entered is nine" ;;
+                10) echo "You entered is ten" ;;
+                *) echo "INVALID NUMBER !"
+                esac
 
 
 
