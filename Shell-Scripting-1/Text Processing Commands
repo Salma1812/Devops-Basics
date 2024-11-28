@@ -1,0 +1,148 @@
+                  Text Processing Commands :
+1. grep
+2. sed
+3. awk
+    1) grep and egrep :
+      grep: Unix utility that searches a pattern through either information piped to it or files: 
+      egrep: extended grep, same as grep -E    
+      zgrep: compressed files. 
+Usage: grep <options> <search pattern> <files> 
+Options: 
+-i -> Ignore case during search 
+-r ,-R -> Search recursively 
+-v -> Invert match i.e. match everything except pattern 
+-l -> List files that match pattern 
+-L -> List files that do not match pattern.
+-n -> prefix each line of output with the line number within its input file. 
+-A num -> print num lines of trailing context after matching lines. 
+-B num ->  print num lines of leading context before matching lines. 
+
+                                                grep Examples :
+Search files containing the word bash in current directory 
+grep bash *
+
+Search files NOT containing the word bash in current directory :
+grep —v bash * 
+
+Repeat above search using a case insensitive pattern match and print line number that matches the search pattern :
+grep —in bash * 
+
+Search files not matching certain name pattern :
+-> ls | grep —vi fun 
+                    grep OR :
+                    grep 'Man\|Sales' employee . txt 
+                    —> 100 Shub Manager Sales $5,000
+                    -> 300 Ankur Sysadmin Technology $7,000 
+                    -> 500 Naveen Manager Sales $6,000
+          grep AND :
+          grep —i 'sys .*Tec employee.txt 
+          —> 100300 Ankur Sysadmin Technology $7,000
+SED :
+*"stream editor" to parse and transform information - information piped to it or from files 
+*line-oriented, operateone line at a time and allow regular expression matching and substitution. 
+*s substitution command ;
+sed commands and flags :
+
+Flags     Operation                   Command          Operation 
+-e     combine multiple commands         s            substitution                                                        
+-f     read commands from file           g           global replacement
+-h      print help info                  p              print
+-n      disable print                    i            ignore case
+-v      print version info               d            delete
+-r      use extended regex               G          add newline
+                                         W          write to file
+                                         X       exchange pattern with hold buffer
+                                         h       copy pattern to hold buffer 
+ sed Examples :                                        ;       separate commands 
+#! /bin/bash 
+# My First Script 
+echo "Hello DevOps! "
+                      Example(2)
+Delete blank lines from a file :
+        sed ' /^$/d' shub.sh 
+        # ! /bin/bash 
+        # My First Script 
+        echo "Hello DevOps ! "
+
+Delete line n through m in a file :
+sed '2,4d' shub.sh 
+#!/bin/bash 
+echo "Hello DevOPs!" 
+
+AWK :
+The awk text-processing language is useful for tasks such as: 
+
+-> Tallying information from text files and creating reports from the results. 
+-> Adding additional functions to text editors like "vi". 
+-> Translating files from one format to another. 
+-> Creating small databases. 
+-> Performing mathematical operations on files of numeric data. 
+                        awk has two faces: 
+          1)It is a utility for performing simple text-processing tasks, and 
+          2)It is a programming language for performing complex textprocessing tasks. 
+* How Does awk Work :
+    1) awk reads the file being processed line by line. 
+    2) The entire content of each line is split into columns with space or tab as the delimiter.
+$0 : Print the entire line.
+$1, $2, $3, ...for each column (if exists)
+NR - number of records (lines) 
+NF - number of fields or columns in the current line. 
+By default the field delimiter is space or tab. To change the field 
+delimiter use the -F<delimiter>command. 
+
+awk Syntax :awk pattern {action} 
+->pattern decides when action is performed 
+  Actions: 
+ * Most common action: print 
+ * Print file dosum.sh : awk '{print $0}' dosum.sh 
+ * Print line matching files in all .sh files in current directory: awk '/bash/{print $0}' *.sh 
+Awk Examples :
+      Print list of files that are bash script files 
+              awk '/^#\!\/bin\/bash/{print $0, FILENAME}' * 
+    ! #!/bin/bash.sh 
+      #!/bin/bash fun_pam.sh 
+      #!/bin/bash hello.sh 
+      #!/bin/bash parm.sh 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
